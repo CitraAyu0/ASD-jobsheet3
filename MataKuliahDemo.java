@@ -2,35 +2,23 @@ import java.util.Scanner;
 public class MataKuliahDemo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        MataKuliah[] arrayOfMataKuliah = new MataKuliah[3];
-        String kode, nama, dummy;
-        int sks, jumlahJam;
 
-        for(int i = 0; i < 3; i++){
-            System.out.println("Masukkan Data MataKuliah ke-" + (i + 1));
-            System.out.print("Kode     : ");
-            kode = sc.nextLine();
-            System.out.print("Nama     : ");
-            nama = sc.nextLine();
-            System.out.print("Sks      : ");
-            dummy = sc.nextLine();
-            sks = Integer.parseInt(dummy);
-            System.out.print("Jumlah Jam : ");
-            dummy = sc.nextLine();
-            jumlahJam = Integer.parseInt(dummy);
-            System.out.println("------------------------------------");
+        System.out.print("Masukkan jumlah mata kuliah: ");
+        int jumlahMataKuliah = sc.nextInt();
+        sc.nextLine(); 
+        
+        MataKuliah[] arrayOfMataKuliah = new MataKuliah[jumlahMataKuliah];
 
-            arrayOfMataKuliah[i] = new MataKuliah(kode, nama, sks, jumlahJam);
+        for (int i = 0; i < jumlahMataKuliah; i++) {
+            System.out.println("\nMasukkan Data Mata Kuliah ke-" + (i + 1));
+            arrayOfMataKuliah[i] = new MataKuliah("", "", 0, 0); 
+            arrayOfMataKuliah[i].tambahData(); 
         }
-            
-        for(int i = 0; i < 3; i++){
-            System.out.println("Data MataKuliah ke-" + (i + 1));
-            System.out.println("Kode       : "+ arrayOfMataKuliah[i].kode);
-            System.out.println("Nama       : "+ arrayOfMataKuliah[i].nama);
-            System.out.println("Sks        : "+ arrayOfMataKuliah[i].sks);
-            System.out.println("Jumlah Jam : "+ arrayOfMataKuliah[i].jumlahJam);
-            System.out.println("--------------------------------------");
-            
+
+        System.out.println("\n===== Data Mata Kuliah =====");
+        for (int i = 0; i < jumlahMataKuliah; i++) {
+            System.out.println("Data Mata Kuliah ke-" + (i + 1));
+            arrayOfMataKuliah[i].cetakInfo(); 
         }
     }
 }
