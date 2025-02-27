@@ -26,9 +26,10 @@ public class DosenDemo {
             daftarDosen[i] = new Dosen(kode, nama, jenisKelamin, usia);
         }
 
-        System.out.println("\n===== Data Dosen =====");
-        for (Dosen d : daftarDosen) {
-            d.cetakInfo();
-        }
+        DataDosen.tampilkanSemuaDosen(daftarDosen);
+        DataDosen.jumlahDosenPerJenisKelamin(daftarDosen);
+        DataDosen.rataRataUsiaPerJenisKelamin(daftarDosen);
+        DataDosen.dosenTertua(daftarDosen);
+        DataDosen.dosenTermuda(daftarDosen);
     }
 }
