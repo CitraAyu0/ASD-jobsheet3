@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MataKuliahDemo",
+            "request": "launch",
+            "mainClass": "MataKuliahDemo",
+            "projectName": "ASD-jobsheet3_7b39d301"
+        },
+        {
+            "type": "java",
             "name": "MahasiswaDemo",
             "request": "launch",
             "mainClass": "MahasiswaDemo",
